@@ -1,4 +1,4 @@
-#Audiocube
+# Audiocube
 
 audiocube is a Node application that is started on boot and waits for OSC (Open Sound Control) commands which can start and stop playback of audio files stored on local disk or card etc. Audio playback and levels are manipulated by NodeJS spawn functions controlling playback (sox) and the linux audio mixer (amixer) respectively. 
 
