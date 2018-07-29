@@ -24,7 +24,7 @@ var os = require("os");
 //////////////////
 var audioPath = '/home/pi/audio/', player = '/usr/bin/play', mixer = '/usr/bin/amixer';
 var cubeID = os.hostname(), lock = false;
-var serverAddress ="192.168.101.61";
+var serverAddress ="x.x.x.x";
 
 var spawn = require('child_process').spawn;
 var play = "", mixer =""; 		//dummy heads for spawn cmd
@@ -48,7 +48,7 @@ var outPort = new osc.UDPPort({
     broadcast: true
 });
 //////////////////
-//LISTEN
+//LISTEN FOR CMDS
 //////////////////
 console.log("listening on port: " + inPort.options.localPort );
 inPort.on("message", function(oscMsg) {
@@ -56,7 +56,7 @@ inPort.on("message", function(oscMsg) {
     console.log("recieved OSC: " + date.getHours() + ":"
     	 + date.getMinutes() + ":" + date.getSeconds() + 
     	 " address: " + oscMsg.address + " args: " + oscMsg.args);
-    
+    // this needs attention to interrupt playback
     if(oscMsg.address == "/play" && !lock) {
 		var selection = audioPath + oscMsg.args;
 		Player(selection);
@@ -77,7 +77,7 @@ function Player(sel) {
 	if (args.length < 2) //if no vol arg, set to full
 		args.push(fullVolume);   
 	var f = args[0];
-	vol = args[1]; //GLOBAL VAR
+	vol = args[1]; //as declared above global scope
 	console.log("SPAWN: " + player + ' ' + f + ' ' + vol);
 	SetVol(vol);
 	play = spawn(player, ['-q', f]);
@@ -97,7 +97,7 @@ function Player(sel) {
 } // ()
 
 //////////////////
-//STOP - wrap both funcs
+//STOP PLAYBACK - wrap both funcs
 //////////////////
 function Stop() {
  	FadeVol(Terminate);

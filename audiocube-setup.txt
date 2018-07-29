@@ -1,0 +1,23 @@
+CUBE Notes:
+
+OS setup for Pi/Raspbian
+
+Aside from regular wifi OS config etc. Definitely want public key auth for ssh to get quick shell access onto each Pi
+
+Startup config:
+
+add these to /boot/config.txt:
+# Enable audio (loads snd_bcm2835)
+dtparam=audio=on
+audio_pwm_mode=2
+# don't start graphical env.
+start_x=0
+
+Note that the above is for (low quality) built-in Pi audio. Using the DAC board has some different directives
+
+add these to /etc/rc.local for 
+# persistent audio level:
+amixer sset PCM,0 98%
+# start the node audio player:
+node /home/pi/cube-play/cube-play.js
+# start the reset/reboot button listener script
