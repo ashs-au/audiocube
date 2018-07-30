@@ -16,7 +16,7 @@ Notes
 * playback commands and player feedback are dispatched by a Max patch which receives commands from the Ableton Live session running the master audio for the show.
 
 one of the cubes installed with Madeleine Preston's ceramics:
-![audiocube installed](http:/feltmakingworkshop.net/gh/images/audiocube-installed.png)
+![audiocube installed](http://feltmakingworkshop.net/gh/images/audiocube-installed.png)
 
 cramped insides of a prototype cube:
-![audiocube insides of](http:/feltmakingworkshop.net/gh/images/audiocube-interior.png)
+![audiocube insides of](http://feltmakingworkshop.net/gh/images/audiocube-interior.png)
