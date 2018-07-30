@@ -15,4 +15,4 @@ Notes
 * the Pis were built with reset/shutdown buttons and status LEDs for easy setup in headless mode.
 * playback commands and player feedback are dispatched by a Max patch which receives commands from the Ableton Live session running the master audio for the show.
 
-[images:](https://github.com/ashs-au/audiocube/wiki/images-of-the-hardware)
+[some images of the hardware](https://github.com/ashs-au/audiocube/wiki/images-of-the-hardware)
